@@ -31,7 +31,10 @@ var config  = {
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js', Infinity),
 		new HtmlWebpackPlugin({ template: './index.html', inject: false })
-	]
+	],
+	externals: {
+		BMap: 'BMap'
+	}
 };
 
 if (process.env.NODE_ENV === 'production') {
